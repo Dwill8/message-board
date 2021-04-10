@@ -8,13 +8,12 @@ public final class DBConnection {
     static final String JDBC_user = "root";
     static final String JDBC_password = "123456789";
 
-    public static JDBCDriver() {
-        try {
-            //1.注册JDBC驱动
+    static {
+        try {//1.注册JDBC驱动
             Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
+        }catch (ClassNotFoundException e) {
+            e.printStackTrace();
             System.out.println("找不到驱动程序类，驱动加载失败");
-            e.printStackTrace();//在命令行打印异常信息在程序中出错的位置
         }
     }
 
@@ -24,7 +23,7 @@ public final class DBConnection {
         try {
             //2.创建数据库连接
             return DriverManager.getConnection(JDBC_url, JDBC_user, JDBC_password);
-        } catch (SQLException) {
+        } catch (SQLException e) {
             System.out.println("创建数据库连接失败");
             e.printStackTrace();
             return null;
@@ -37,21 +36,21 @@ public final class DBConnection {
             if(resultSet != null) {
                 resultSet.close();
             }
-        } catch (SQLException) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try{
                 if(preparedStatement != null) {
                     preparedStatement.close();
                 }
-            } catch (SQLException){
+            } catch (SQLException e){
                 e.printStackTrace();
             } finally {
                 try{
                     if(connection != null){
                         connection.close();
                     }
-                } catch (SQLException){
+                } catch (SQLException e){
                     e.printStackTrace();
                 }
             }

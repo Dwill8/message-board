@@ -1,20 +1,23 @@
 package com.jdbc.test.bean;
 
+import java.util.Date;
+
 public class Message {
     private long id;
+    private long userId;
+
+
     private String userName;
     private String title;
     private String content;
-    private String createTime;
-    private String createDate;
+    private Date createTime;
 
-    public Message(long id, String userName, String title, String content, String createTime, String createDate) {
+    public Message(long id, long userId, String userName, String title, String content, Date createTime) {
         this.id = id;
         this.userName = userName;
         this.title = title;
         this.content = content;
         this.createTime = createTime;
-        this.createDate = createDate;
     }
 
     public long getId() {
@@ -24,6 +27,10 @@ public class Message {
     public void setId(long id) {
         this.id = id;
     }
+
+    public long getUserId() { return userId; }
+
+    public void setUserId(long userId) { this.userId = userId; }
 
     public String getUserName() {
         return userName;
@@ -49,19 +56,12 @@ public class Message {
         this.content = content;
     }
 
-    public String getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public String getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
-    }
 }

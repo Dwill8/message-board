@@ -2,18 +2,17 @@ package com.jdbc.test.bean;
 
 import java.util.Date;
 
-public class Message {
+public class MessageBean {
     private long id;
     private long userId;
-
-
     private String userName;
     private String title;
     private String content;
     private Date createTime;
 
-    public Message(long id, long userId, String userName, String title, String content, Date createTime) {
+    public MessageBean(long id, long userId, String userName, String title, String content, Date createTime) {
         this.id = id;
+        this.userId = userId;
         this.userName = userName;
         this.title = title;
         this.content = content;

@@ -4,4 +4,15 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>MessageBoradServlet</servlet-name>
+    <servlet-class>com.jdbc.test.servlet.MessageBoardServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>MessageBoradServlet</servlet-name>
+    <url-pattern>/message/list.do</url-pattern>
+  </servlet-mapping>
+
 </web-app>

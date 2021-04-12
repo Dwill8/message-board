@@ -1,7 +1,9 @@
 package com.jdbc.test.servlet;
 
+import com.jdbc.test.bean.MessageBean;
 import com.jdbc.test.service.MessageService;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class MessageBoardServlet extends HttpServlet {
     private MessageService messageService;
@@ -30,7 +33,13 @@ public class MessageBoardServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }
-        messageService.getMessages();//分页查询全部留言
+        List<MessageBean> messages = messageService.getMessages(page, 5);//分页查询全部留言
+        int count = messageService.countMessages();
+        int last = count % 5 == 0 ? (count / 5) : ((count / 5) + 1);
+        req.setAttribute("last", last);
+        req.setAttribute("messages",messages);
+        req.setAttribute("page", page);
+        req.getRequestDispatcher("src / main / webapp / index.jsp").forward(req,resp);
     }
 
 

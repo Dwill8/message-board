@@ -1,9 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page import="com.jdbc.test.dao.MessageDao" %>
+<%@ page import="com.jdbc.test.servlet.MessageBoardServlet" %><%--
+  Created by IntelliJ IDEA.
+  User: liziheng
+  Date: 12/04/2021
+  Time: 22:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>留言板主界面</title>
 </head>
+
 <body>
 <div id="container" style="width: 1200px">
     <div id="header" style="background-color:#FFA500">
@@ -11,17 +20,20 @@
 <hr />
 <form action="/message/list.do" method="post">
     <table border="1"></table>
-        <tr>
-            <th>留言账号</th>
-            <th>留言时间</th>
-            <th>留言主题</th>
-            <th>留言内容</th>
-        </tr>
-        <nav aria-label="Page navigation">
-            <ul class="pagination-lg">
-                <form id="messageForm" action="/message/list.do" method="post">
-                    <input type="hidden" id="page" name="page" value="${page}">
-                    <input type="hidden" id="last" name="last" value="${last}">
+    <tr>
+        <th>留言账号</th>
+        <th>留言时间</th>
+        <th>留言主题</th>
+        <th>留言内容</th>
+    </tr>
+    <tr>
+        <td><%%></td>
+    </tr>
+    <nav aria-label="Page navigation">
+        <ul class="pagination-lg">
+            <form id="messageForm" action="/message/list.do" method="post">
+                <input type="hidden" id="page" name="page" value="${page}">
+                <input type="hidden" id="last" name="last" value="${last}">
                 <li>
                     <a href="#" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
@@ -37,10 +49,10 @@
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
-                </form>
-            </ul>
-        </nav>
- </form>
+            </form>
+        </ul>
+    </nav>
+</form>
 <%} if (null != request.getSession().getAttribute("user")) {%>
 <a href="/leaveMessagePrompt.do"><button>创建留言</button></a>
 <%} else { %>

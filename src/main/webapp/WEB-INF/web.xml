@@ -6,25 +6,41 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
-    <servlet-name>MessageBoradServlet</servlet-name>
+    <servlet-name>MessageBoardServlet</servlet-name>
     <servlet-class>com.jdbc.test.servlet.MessageBoardServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.jdbc.test.servlet.RegisterServlet</servlet-class>
+  </servlet>
 
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.jdbc.test.servlet.LoginServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>MessageServlet</servlet-name>
+    <servlet-class>com.jdbc.test.servlet.MessageServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>MessageServlet</servlet-name>
+    <url-pattern>/leaveMessage.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>MessageServlet</servlet-name>
+    <url-pattern>/leaveMessagePrompt.do</url-pattern>
+  </servlet-mapping>
+
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/login.do</url-pattern>
   </servlet-mapping>
-
-  <servlet>
-    <servlet-name>RegisterServlet</servlet-name>
-    <servlet-class>com.jdbc.test.servlet.RegisterServlet</servlet-class>
-  </servlet>
 
   <servlet-mapping>
     <servlet-name>RegisterServlet</servlet-name>
@@ -32,7 +48,7 @@
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>MessageBoradServlet</servlet-name>
+    <servlet-name>MessageBoardServlet</servlet-name>
     <url-pattern>/message/list.do</url-pattern>
   </servlet-mapping>
 

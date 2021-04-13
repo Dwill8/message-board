@@ -9,16 +9,16 @@
     <div id="header" style="background-color:#FFA500">
         <h1>请留言</h1></div></div>
 <hr />
-<form action="LeaveMessage" method="post">
+<form action="/leaveMessage.do" method="post">
     <table style="margin-left: 40%" border="1">
         <caption>填写留言</caption>
         <tr>
             <th>留言主题</th>
-            <th><input type="text" name="title"></th>
+            <th><input type="title" name="title"></th>
         </tr>
         <tr>
             <th>留言内容</th>
-            <th><textarea name="message" rows="8" cols="35"></textarea></th>
+            <th><textarea name="content" rows="8" cols="35"></textarea></th>
         </tr>
     </table>
     <input type="submit" value="提交" />

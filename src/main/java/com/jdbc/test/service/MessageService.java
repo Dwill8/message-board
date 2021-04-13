@@ -2,12 +2,17 @@ package com.jdbc.test.service;
 import com.jdbc.test.bean.MessageBean;
 import com.jdbc.test.dao.MessageDao;
 
+import java.util.Date;
 import java.util.List;
 
 public class MessageService {
     private MessageDao messageDao;
     public MessageService(){
         messageDao = new MessageDao();
+    }
+    public boolean addMessage(MessageBean messageBean){
+        messageBean.setCreateTime(new Date());
+        return messageDao.save(messageBean);
     }
 
     /** 分页查询全部留言

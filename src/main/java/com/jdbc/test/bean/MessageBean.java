@@ -19,6 +19,13 @@ public class MessageBean {
         this.createTime = createTime;
     }
 
+    public MessageBean(long userId, String userName, String title, String content) {
+        this.userId = userId;
+        this.userName = userName;
+        this.title = title;
+        this.content = content;
+    }
+
     public long getId() {
         return id;
     }

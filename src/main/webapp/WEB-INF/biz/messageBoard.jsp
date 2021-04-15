@@ -1,5 +1,6 @@
 <%@ page import="com.jdbc.test.dao.MessageDao" %>
-<%@ page import="com.jdbc.test.servlet.MessageBoardServlet" %><%--
+<%@ page import="com.jdbc.test.servlet.MessageBoardServlet" %>
+<%--
   Created by IntelliJ IDEA.
   User: liziheng
   Date: 12/04/2021
@@ -27,7 +28,7 @@
         <th>留言内容</th>
     </tr>
     <tr>
-        <td><%%></td>
+        <td>${messages}</td>
     </tr>
     <nav aria-label="Page navigation">
         <ul class="pagination-lg">
@@ -44,11 +45,6 @@
                 <li><a href="javascript:void(0)" >当前第${page}页</a></li>
                 <li><a href="javascript:void(0)" oneclick="submitMessageForm('next')">下一页</a></li>
                 <li><a href="javascript:void(0)" oneclick="submitMessageForm('last')">尾页</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
             </form>
         </ul>
     </nav>

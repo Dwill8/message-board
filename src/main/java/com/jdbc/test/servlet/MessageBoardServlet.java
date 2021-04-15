@@ -1,8 +1,6 @@
 package com.jdbc.test.servlet;
-
 import com.jdbc.test.bean.MessageBean;
 import com.jdbc.test.service.MessageService;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
